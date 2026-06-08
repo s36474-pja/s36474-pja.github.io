@@ -1,131 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Smithing</title>
- 
-<style>
-    .image-container{
-    width:100%;
-    text-align:center;
-    margin:30px 0;
-}
- 
-.image-container img{
-    width:1000px;
-    max-width:100%;
-    height:450px;
-    object-fit:cover;
-    border-radius:12px;
-    border:3px solid #555;
-    box-shadow:0 0 20px rgba(0,0,0,0.5);
-}
-
-body{
-    background:#222;
-    color:white;
-    font-family:Arial,sans-serif;
-}
- 
-.container{
-    width:1400px;
-    margin:auto;
-    padding:50px;
-}
- 
-h1{
-    font-size:56px;
-}
- 
-h2{
-    color:gold;
-}
- 
-p{
-    font-size:22px;
-    line-height:1.6;
-}
- 
-.back{
-    display:inline-block;
-    margin-top:30px;
-    padding:15px 30px;
-    background:#555;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
-}
- 
-.back:hover{
-    background:#777;
-}
- 
-.hidden{
-    color:#222;
-    background:#222;
-}
-</style>
+    <title>Smithing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
 </head>
- 
-<body>
- 
+
+<body style="background-image:url('https://images.uesp.net/e/eb/SR-perktree-Smithing.jpg'); background-size:cover; background-position:center;">
+
+<div class="overlay">
 <div class="container">
- 
+
 <h1>Smithing</h1>
- 
+
 <div class="image-container">
-    <img src="images/smithing.webp" alt="smithing skill">
+    <img src="images/smithing.webp" alt="Smithing">
 </div>
 
-<p><strong>Author:</strong> mykhailo kovtok s36474</p>
- 
-<h2>What does it do?</h2>
- 
+<p class="author">Author: mykhailo kovtok s36474</p>
+
+<div class="fade-section">
+<h2>What Does It Do?</h2>
+
 <p>
 Smithing allows you to craft and improve weapons and armor.
-Eventually you'll be making equipment so strong that dragons
-become oversized flying loot containers.
+Eventually you'll forge equipment so powerful that dragons
+become flying treasure chests.
 </p>
- 
-<h2>Perks</h2>
- 
-<p>
-The skill tree unlocks better crafting materials:
-Steel, Dwarven, Orcish, Ebony, Daedric and Dragon Armor.
-Basically a progression from "village blacksmith"
-to "local factory."
-</p>
- 
-<h2>Leveling</h2>
- 
-<p>
-Craft items. Lots of items.
-Jewelry is particularly effective because apparently
-forging one gold ring teaches more about metallurgy
-than making an actual sword.
-</p>
- 
-<h2>Exploits & Tricks</h2>
- 
-<p>
-Use Transmute Ore to turn iron into gold,
-craft gold rings,
-become rich,
-question Skyrim's economy.
-</p>
- 
-<p>
-The Restoration Loop exploit can create absurdly powerful gear,
-though it may also create absurdly powerful bugs.
-</p>
- 
-<p class="hidden">
-If you're carrying 600 iron daggers, everyone in Whiterun thinks you're an idiot.
-</p>
- 
-<a href="index.html" class="back">← Back to Main Page</a>
- 
 </div>
- 
+
+<div class="fade-section">
+<h2>Skill Tree Benefits</h2>
+
+<p>
+Unlock access to Steel, Dwarven, Orcish, Ebony, Daedric and Dragon equipment.
+You evolve from village blacksmith into a one-person military industry.
+</p>
+</div>
+
+<div class="fade-section">
+<h2>How To Level</h2>
+
+<p>
+Craft equipment, especially jewelry.
+Apparently creating 300 gold rings teaches more about metallurgy than making swords.
+</p>
+</div>
+
+<div class="fade-section">
+<h2>Exploits & Tricks</h2>
+
+<p>
+Use the Transmute spell to convert iron ore into gold ore.
+Craft rings and become richer than half of Skyrim.
+</p>
+
+<p>
+The famous Restoration Loop can create equipment capable of deleting reality.
+</p>
+</div>
+
+<p class="hidden">
+Whiterun economists have a restraining order against you.
+</p>
+
+<a class="back" href="index.html">← Back</a>
+
+</div>
+</div>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+}
+});
+},{threshold:0.15});
+
+document.querySelectorAll('.fade-section')
+.forEach(section=>observer.observe(section));
+</script>
+
 </body>
 </html>

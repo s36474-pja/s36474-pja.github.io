@@ -1,138 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Heavy Armor</title>
- 
-<style>
-    .image-container{
-    width:100%;
-    text-align:center;
-    margin:30px 0;
-}
- 
-.image-container img{
-    width:1000px;
-    max-width:100%;
-    height:450px;
-    object-fit:cover;
-    border-radius:12px;
-    border:3px solid #555;
-    box-shadow:0 0 20px rgba(0,0,0,0.5);
-}
-
-body{
-    background:#222;
-    color:white;
-    font-family:Arial,sans-serif;
-}
- 
-.container{
-    width:1400px;
-    margin:auto;
-    padding:50px;
-}
- 
-h1{
-    font-size:56px;
-}
- 
-h2{
-    color:#ff6666;
-}
- 
-p{
-    font-size:22px;
-    line-height:1.6;
-}
- 
-.back{
-    display:inline-block;
-    margin-top:30px;
-    padding:15px 30px;
-    background:#555;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
-}
- 
-.back:hover{
-    background:#777;
-}
- 
-.hidden{
-    color:#222;
-    background:#222;
-}
-</style>
+    <title>Heavy Armor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
 </head>
- 
-<body>
- 
+
+<body style="background-image:url('https://images.steamusercontent.com/ugc/540678548744671917/CE39D8534328C48E6B638271F21BB192347C7C9F/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false'); background-size:cover; background-position:center;">
+
+<div class="overlay">
 <div class="container">
- 
+
 <h1>Heavy Armor</h1>
 
 <div class="image-container">
-    <img src="https://p.turbosquid.com/ts-thumb/fG/ThtNPv/BF/01/png/1613582420/1920x1080/fit_q87/0a4451dfc4cb370566d86d4fcbd08b27f0131392/01.jpg">
+    <img src="images/heavyarmor.jpg" alt="Heavy Armor">
 </div>
- 
-<p><strong>Author:</strong> mykhailo kovtok s36474</p>
- 
-<h2>What does it do?</h2>
- 
+
+<p class="author">Author: mykhailo kovtok s36474</p>
+
+<div class="fade-section">
+<h2>What Does It Do?</h2>
+
 <p>
-Heavy Armor allows you to become a walking castle.
+Heavy Armor transforms you into a walking fortress.
+Stealth becomes impossible, but survival becomes optional.
 </p>
- 
-<p>
-You lose the ability to move quietly,
-but gain the ability to survive things
-that should definitely kill you.
-</p>
- 
-<h2>Perks</h2>
- 
+</div>
+
+<div class="fade-section">
+<h2>Important Perks</h2>
+
 <p>
 Juggernaut increases armor rating.
 Matching Set rewards fashion.
 Conditioning removes movement penalties.
-Reflect Blows occasionally returns damage.
+Reflect Blows occasionally punishes attackers.
 </p>
- 
-<h2>Leveling</h2>
- 
+</div>
+
+<div class="fade-section">
+<h2>How To Level</h2>
+
 <p>
-Wear heavy armor and get hit.
-A lot.
+Wear heavy armor and get hit repeatedly.
+Apparently Skyrim's educational system is based on blunt force trauma.
 </p>
- 
-<p>
-Apparently getting punched repeatedly
-is an accepted educational method in Skyrim.
-</p>
- 
+</div>
+
+<div class="fade-section">
 <h2>Exploits & Tricks</h2>
- 
+
 <p>
 Let mudcrabs attack you while healing.
-The mudcrab gets exercise,
-you get levels.
-Everyone wins.
+The mudcrab gets exercise and you gain levels.
+Everybody wins.
 </p>
- 
+
 <p>
-Many players combine this with Restoration
-for extremely safe armor training.
+Combining Heavy Armor and Restoration creates a training method that would horrify any physician.
 </p>
- 
-<p class="hidden">
-If a mudcrab has attacked you for twenty minutes, reconsider your life choices.
-</p>
- 
-<a href="index.html" class="back">← Back to Main Page</a>
- 
 </div>
- 
+
+<p class="hidden">
+If a mudcrab has been hitting you for 30 minutes, rethink your life.
+</p>
+
+<a class="back" href="index.html">← Back</a>
+
+</div>
+</div>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+}
+});
+},{threshold:0.15});
+
+document.querySelectorAll('.fade-section')
+.forEach(section=>observer.observe(section));
+</script>
+
 </body>
 </html>
